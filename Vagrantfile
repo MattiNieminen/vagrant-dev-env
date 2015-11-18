@@ -9,4 +9,8 @@ Vagrant.configure(2) do |config|
   # MongoDB
   config.vm.network "forwarded_port", guest: 27017, host: 27017
   config.vm.provision "shell", path: "os/mongodb.sh"
+
+  # PostgreSQL
+  config.vm.network "forwarded_port", guest: 5432, host: 5432
+  config.vm.provision "shell", path: "os/postgres.sh"
 end
